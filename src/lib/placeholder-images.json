@@ -2,7 +2,7 @@
   "folders": [
     {
       "id": "folder-1",
-      "name": "Our Beach Trip",
+      "name": "Folder 1",
       "media": [
         {
           "id": "1",
@@ -23,7 +23,7 @@
     },
     {
       "id": "folder-2",
-      "name": "City Adventures",
+      "name": "Folder 2",
       "media": [
         {
           "id": "3",
@@ -31,19 +31,12 @@
           "description": "Candid laughter shared over a cup of coffee in a cozy cafe.",
           "imageUrl": "https://images.unsplash.com/photo-1728382909833-59ce81424ae1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb3VwbGUlMjBjb2ZmZWV8ZW58MHx8fHwxNzU5MTY2NDExfDA&ixlib=rb-4.1.0&q=80&w=1080",
           "imageHint": "couple coffee"
-        },
-        {
-          "id": "9",
-          "type": "image",
-          "description": "First vacation together, posing in front of an old European landmark.",
-          "imageUrl": "https://images.unsplash.com/photo-1615039666131-964929ad0f1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjB2YWNhdGlvbnxlbnwwfHx8fDE3NTkyMzg5NjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-          "imageHint": "couple vacation"
         }
       ]
     },
     {
       "id": "folder-3",
-      "name": "Cozy Moments at Home",
+      "name": "Folder 3",
       "media": [
         {
           "id": "5",
