@@ -12,6 +12,7 @@ export default {
       fontFamily: {
         body: ['PT Sans', 'sans-serif'],
         headline: ['Playfair Display', 'serif'],
+        handwriting: ['Corinthia', 'cursive'],
         code: ['monospace'],
       },
       colors: {

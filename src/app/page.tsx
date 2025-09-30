@@ -48,7 +48,7 @@ export default function LoginPage() {
       <Card className="relative z-10 w-full max-w-md animate-fade-in-up border-primary/20 bg-card/80 shadow-2xl shadow-primary/10">
         <CardHeader className="items-center text-center">
           <Logo className="mb-4 h-16 w-16 text-primary" />
-          <CardTitle className="font-headline text-4xl">
+          <CardTitle className="font-handwriting text-6xl">
             LoveVault
           </CardTitle>
           <CardDescription className="font-body text-foreground/80">
@@ -66,4 +66,3 @@ export default function LoginPage() {
     </main>
   );
 }
-

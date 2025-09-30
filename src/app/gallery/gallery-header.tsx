@@ -9,8 +9,8 @@ export function GalleryHeader() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/gallery" className="flex items-center gap-2">
           <Logo className="h-8 w-8 text-primary" />
-          <span className="font-headline text-2xl font-bold text-foreground">
-            Forever Gallery
+          <span className="font-handwriting text-4xl font-bold text-foreground">
+            LoveVault
           </span>
         </Link>
         <div className="flex items-center gap-4">
