@@ -31,8 +31,8 @@ export async function login(
       maxAge: 60 * 60 * 24 * 7, // 1 week
       path: "/",
     });
-    // Redirect is handled client-side on success
-    return { success: true };
+    // Redirect on the server after successful login
+    redirect("/gallery");
   } else {
     return { error: "The secret is incorrect. Try again." };
   }

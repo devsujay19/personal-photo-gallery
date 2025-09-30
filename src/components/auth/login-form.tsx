@@ -2,7 +2,6 @@
 
 import { useActionState, useEffect, useRef } from "react";
 import { useFormStatus } from "react-dom";
-import { useRouter } from "next/navigation";
 import { login } from "@/lib/actions";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -26,7 +25,6 @@ function SubmitButton() {
 
 export function LoginForm() {
   const [state, formAction] = useActionState(login, undefined);
-  const router = useRouter();
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -38,16 +36,8 @@ export function LoginForm() {
         description: state.error,
       });
     }
-    if (state?.success) {
-      toast({
-        title: "Welcome!",
-        description: "Welcome to our gallery!",
-      });
-      // Force a redirect to the gallery page
-      router.push("/gallery");
-      router.refresh();
-    }
-  }, [state, router, toast]);
+    // The success case and redirection are now handled by the server action.
+  }, [state, toast]);
 
   return (
     <form ref={formRef} action={formAction} className="space-y-4">
