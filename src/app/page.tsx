@@ -1,14 +1,37 @@
+
+'use client';
+
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Logo } from '@/components/icons/logo';
 import { LoginForm } from '@/components/auth/login-form';
 import placeHolderImages from '@/lib/placeholder-images.json';
+import { useSearchParams } from 'next/navigation';
+import { useEffect } from 'react';
+import { useToast } from '@/hooks/use-toast';
+
+function LogoutToast() {
+  const searchParams = useSearchParams();
+  const { toast } = useToast();
+
+  useEffect(() => {
+    if (searchParams.get('logged_out')) {
+      toast({
+        title: 'Logged out',
+        description: 'You have been successfully logged out.',
+      });
+    }
+  }, [searchParams, toast]);
+
+  return null;
+}
 
 export default function LoginPage() {
   const heroImage = placeHolderImages.placeholderImages.find(img => img.imageHint.includes('couple'));
   
   return (
     <main className="relative flex min-h-screen w-full flex-col items-center justify-center p-4">
+       <LogoutToast />
       <div className="absolute inset-0 z-0">
         <Image
           src={heroImage?.imageUrl || "https://picsum.photos/seed/lovebg/1920/1080"}
@@ -42,3 +65,4 @@ export default function LoginPage() {
     </main>
   );
 }
+

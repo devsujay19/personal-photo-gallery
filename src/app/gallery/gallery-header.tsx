@@ -1,6 +1,5 @@
 import { Logo } from "@/components/icons/logo";
 import { Button } from "@/components/ui/button";
-import { logout } from "@/lib/actions";
 import { LogOut } from "lucide-react";
 import Link from "next/link";
 
@@ -15,12 +14,12 @@ export function GalleryHeader() {
           </span>
         </Link>
         <div className="flex items-center gap-4">
-          <form action={logout}>
-            <Button variant="ghost" size="sm" type="submit">
+          <Button variant="ghost" size="sm" asChild>
+            <Link href="/logout">
               <LogOut className="mr-2 h-4 w-4" />
               Logout
-            </Button>
-          </form>
+            </Link>
+          </Button>
         </div>
       </div>
     </header>

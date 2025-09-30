@@ -38,7 +38,8 @@ export async function login(
   }
 }
 
-export async function logout() {
-  cookies().delete("auth-token");
-  redirect("/");
-}
+// This function is no longer needed as logout is handled by the /logout route.
+// export async function logout() {
+//   cookies().delete("auth-token");
+//   redirect("/");
+// }
