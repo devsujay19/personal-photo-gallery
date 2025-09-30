@@ -43,7 +43,9 @@ export function LoginForm() {
         title: "Welcome!",
         description: "Welcome to our gallery!",
       });
+      // Force a redirect to the gallery page
       router.push("/gallery");
+      router.refresh();
     }
   }, [state, router, toast]);
 
