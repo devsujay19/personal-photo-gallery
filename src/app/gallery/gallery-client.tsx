@@ -105,7 +105,7 @@ export function GalleryClient({ folders, uncategorized }: { folders: Folder[], u
             >
               <div className="flex h-full flex-col items-center justify-center p-4">
                 <FolderIcon className="h-24 w-24 text-primary/70 transition-transform duration-300 group-hover:scale-110 group-hover:text-primary" />
-                <p className="mt-4 text-center font-headline text-lg font-bold text-foreground">
+                <p className="mt-4 text-center font-comic-relief text-xl font-bold text-foreground">
                   {folder.name}
                 </p>
                 <p className="text-sm text-muted-foreground">{folder.media.length} items</p>

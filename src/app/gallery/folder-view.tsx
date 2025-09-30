@@ -21,7 +21,7 @@ export function FolderView({ folder, onBack, openViewer }: FolderViewProps) {
           <ArrowLeft className="h-6 w-6" />
         </Button>
         <div>
-          <h1 className="font-headline text-4xl font-bold tracking-tight text-primary md:text-5xl">
+          <h1 className="font-comic-relief text-4xl font-bold tracking-tight text-primary md:text-5xl">
             {folder.name}
           </h1>
           <p className="mt-1 text-lg text-foreground/80">
