@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Logo } from '@/components/icons/logo';
 import { LoginForm } from '@/components/auth/login-form';
-import placeHolderImages from '@/lib/placeholder-images.json';
+import { mediaData } from '@/lib/placeholder-images';
 import { useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
@@ -27,7 +27,8 @@ function LogoutToast() {
 }
 
 export default function LoginPage() {
-  const heroImage = placeHolderImages.placeholderImages.find(img => img.imageHint.includes('couple'));
+  const allMedia = [...mediaData.folders.flatMap(f => f.media), ...mediaData.uncategorized];
+  const heroImage = allMedia.find(img => img.imageHint.includes('couple'));
   
   return (
     <main className="relative flex min-h-screen w-full flex-col items-center justify-center p-4">

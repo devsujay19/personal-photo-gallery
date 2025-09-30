@@ -1,3 +1,4 @@
+
 import data from './placeholder-images.json';
 
 export type Media = {
@@ -9,4 +10,10 @@ export type Media = {
   imageHint: string;
 };
 
-export const mediaData: Media[] = data.placeholderImages;
+export type Folder = {
+  id: string;
+  name: string;
+  media: Media[];
+}
+
+export const mediaData: { folders: Folder[], uncategorized: Media[] } = data;

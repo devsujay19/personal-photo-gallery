@@ -1,12 +1,83 @@
 {
-  "placeholderImages": [
+  "folders": [
     {
-      "id": "1",
-      "type": "image",
-      "description": "A smiling couple holding hands, walking on a sun-drenched beach at sunset.",
-      "imageUrl": "https://images.unsplash.com/photo-1623137285582-8a3608b5ff09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb3VwbGUlMjBiZWFjaHxlbnwwfHx8fDE3NTkyMDU5NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "couple beach"
+      "id": "folder-1",
+      "name": "Our Beach Trip",
+      "media": [
+        {
+          "id": "1",
+          "type": "image",
+          "description": "A smiling couple holding hands, walking on a sun-drenched beach at sunset.",
+          "imageUrl": "https://images.unsplash.com/photo-1623137285582-8a3608b5ff09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb3VwbGUlMjBiZWFjaHxlbnwwfHx8fDE3NTkyMDU5NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+          "imageHint": "couple beach"
+        },
+        {
+          "id": "6",
+          "type": "video",
+          "description": "Dancing under the stars during a warm summer night.",
+          "imageUrl": "https://images.unsplash.com/photo-1685519641913-5f3e95d5a54b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3VwbGUlMjBkYW5jaW5nfGVufDB8fHx8fDE3NTkxNDA5MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+          "videoUrl": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+          "imageHint": "couple dancing"
+        }
+      ]
     },
+    {
+      "id": "folder-2",
+      "name": "City Adventures",
+      "media": [
+        {
+          "id": "3",
+          "type": "image",
+          "description": "Candid laughter shared over a cup of coffee in a cozy cafe.",
+          "imageUrl": "https://images.unsplash.com/photo-1728382909833-59ce81424ae1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb3VwbGUlMjBjb2ZmZWV8ZW58MHx8fHwxNzU5MTY2NDExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+          "imageHint": "couple coffee"
+        },
+        {
+          "id": "4",
+          "type": "image",
+          "description": "A silhouette of a couple kissing against a vibrant city skyline at dusk.",
+          "imageUrl": "https://images.unsplash.com/photo-1592399668789-6432393d5761?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBraXNzaW5nfGVufDB8fHx8fDE3NTkyMzg5NjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+          "imageHint": "couple kissing"
+        },
+        {
+          "id": "9",
+          "type": "image",
+          "description": "First vacation together, posing in front of an old European landmark.",
+          "imageUrl": "https://images.unsplash.com/photo-1615039666131-964929ad0f1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjB2YWNhdGlvbnxlbnwwfHx8fDE3NTkyMzg5NjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+          "imageHint": "couple vacation"
+        }
+      ]
+    },
+    {
+      "id": "folder-3",
+      "name": "Cozy Moments at Home",
+      "media": [
+        {
+          "id": "5",
+          "type": "image",
+          "description": "A quiet moment reading a book together in a sunlit room.",
+          "imageUrl": "https://images.unsplash.com/photo-1536093058105-e4d1e0c5e525?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb3VwbGUlMjByZWFkaW5nfGVufDB8fHx8fDE3NTkyMzg5NjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+          "imageHint": "couple reading"
+        },
+        {
+          "id": "8",
+          "type": "image",
+          "description": "A playful pillow fight captured in a candid moment.",
+          "imageUrl": "https://images.unsplash.com/photo-1660597055848-3bfee1eeed6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBwbGF5ZnVsfGVufDB8fHx8fDE3NTkxNTE0MDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+          "imageHint": "couple playful"
+        },
+        {
+          "id": "10",
+          "type": "video",
+          "description": "Building furniture for our first home, filled with laughter and teamwork.",
+          "imageUrl": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb3VwbGUlMjBob21lfGVufDB8fHx8fDE3NTkyMzUzNjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+          "videoUrl": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+          "imageHint": "couple home"
+        }
+      ]
+    }
+  ],
+  "uncategorized": [
     {
       "id": "2",
       "type": "video",
@@ -16,62 +87,11 @@
       "imageHint": "proposal sunrise"
     },
     {
-      "id": "3",
-      "type": "image",
-      "description": "Candid laughter shared over a cup of coffee in a cozy cafe.",
-      "imageUrl": "https://images.unsplash.com/photo-1728382909833-59ce81424ae1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb3VwbGUlMjBjb2ZmZWV8ZW58MHx8fHwxNzU5MTY2NDExfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "couple coffee"
-    },
-    {
-      "id": "4",
-      "type": "image",
-      "description": "A silhouette of a couple kissing against a vibrant city skyline at dusk.",
-      "imageUrl": "https://images.unsplash.com/photo-1592399668789-6432393d5761?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBraXNzaW5nfGVufDB8fHx8MTc1OTIzODk2NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "couple kissing"
-    },
-    {
-      "id": "5",
-      "type": "image",
-      "description": "A quiet moment reading a book together in a sunlit room.",
-      "imageUrl": "https://images.unsplash.com/photo-1536093058105-e4d1e0c5e525?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb3VwbGUlMjByZWFkaW5nfGVufDB8fHx8MTc1OTIzODk2NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "couple reading"
-    },
-    {
-      "id": "6",
-      "type": "video",
-      "description": "Dancing under the stars during a warm summer night.",
-      "imageUrl": "https://images.unsplash.com/photo-1685519641913-5f3e95d5a54b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3VwbGUlMjBkYW5jaW5nfGVufDB8fHx8MTc1OTE0MDkyNHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "videoUrl": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-      "imageHint": "couple dancing"
-    },
-    {
       "id": "7",
       "type": "image",
       "description": "An engagement ring sparkling on a hand, held by another.",
       "imageUrl": "https://images.unsplash.com/photo-1529519195486-16945f0fb37f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlbmdhZ2VtZW50JTIwcmluZ3xlbnwwfHx8fDE3NTkxMzYzMDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "engagement ring"
-    },
-    {
-      "id": "8",
-      "type": "image",
-      "description": "A playful pillow fight captured in a candid moment.",
-      "imageUrl": "https://images.unsplash.com/photo-1660597055848-3bfee1eeed6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBwbGF5ZnVsfGVufDB8fHx8MTc1OTE1MTQwM3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "couple playful"
-    },
-    {
-      "id": "9",
-      "type": "image",
-      "description": "First vacation together, posing in front of an old European landmark.",
-      "imageUrl": "https://images.unsplash.com/photo-1615039666131-964929ad0f1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjB2YWNhdGlvbnxlbnwwfHx8fDE3NTkyMzg5NjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "couple vacation"
-    },
-    {
-      "id": "10",
-      "type": "video",
-      "description": "Building furniture for our first home, filled with laughter and teamwork.",
-      "imageUrl": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb3VwbGUlMjBob21lfGVufDB8fHx8MTc1OTIzNTM2OHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "videoUrl": "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-      "imageHint": "couple home"
     }
   ]
 }

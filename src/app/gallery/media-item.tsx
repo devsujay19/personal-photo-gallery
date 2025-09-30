@@ -1,3 +1,4 @@
+
 "use client";
 
 import type { Media } from "@/lib/placeholder-images";
@@ -18,11 +19,11 @@ export function MediaItem({ media, index, openViewer, isHighlighted }: MediaItem
 
   return (
     <motion.div
-      layout
+      layoutId={`media-${media.id}`}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.8 }}
-      transition={{ duration: 0.3, delay: index * 0.05 }}
+      transition={{ duration: 0.3 }}
       className={cn(
         "group relative aspect-[3/4] cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-primary/30",
         isHighlighted

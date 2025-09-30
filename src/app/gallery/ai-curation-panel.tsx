@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -81,7 +82,7 @@ export function AiCurationPanel({
         <div className="mt-6 flex flex-col gap-6">
           <Button
             onClick={handleSuggestGroups}
-            disabled={isLoading}
+            disabled={isLoading || media.length === 0}
             className="w-full"
           >
             {isLoading ? (

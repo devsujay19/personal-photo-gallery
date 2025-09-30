@@ -1,6 +1,7 @@
+
 "use client";
 
-import type { Media } from "@/lib/placeholder-images";
+import type { Media, Folder } from "@/lib/placeholder-images";
 import { useState } from "react";
 import { AiCurationPanel } from "./ai-curation-panel";
 import { MediaItem } from "./media-item";
@@ -8,20 +9,24 @@ import { MediaViewer } from "./media-viewer";
 import type { SuggestMediaGroupsOutput } from "@/ai/flows/ai-media-grouping";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Upload } from "lucide-react";
+import { Upload, Folder as FolderIcon } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { FolderView } from "./folder-view";
 
-export function GalleryClient({ allMedia }: { allMedia: Media[] }) {
+export function GalleryClient({ folders, uncategorized }: { folders: Folder[], uncategorized: Media[] }) {
   const [viewerState, setViewerState] = useState<{
     isOpen: boolean;
     index: number;
-  }>({ isOpen: false, index: 0 });
+    mediaList: Media[];
+  }>({ isOpen: false, index: 0, mediaList: [] });
 
   const [aiSuggestions, setAiSuggestions] =
     useState<SuggestMediaGroupsOutput | null>(null);
   const [highlightedGroup, setHighlightedGroup] = useState<number[] | null>(
     null
   );
+
+  const [selectedFolder, setSelectedFolder] = useState<Folder | null>(null);
 
   const { toast } = useToast();
   
@@ -32,22 +37,34 @@ export function GalleryClient({ allMedia }: { allMedia: Media[] }) {
     });
   };
 
-  const openViewer = (index: number) => setViewerState({ isOpen: true, index });
-  const closeViewer = () => setViewerState({ isOpen: false, index: 0 });
+  const openViewer = (index: number, mediaList: Media[]) => setViewerState({ isOpen: true, index, mediaList });
+  const closeViewer = () => setViewerState({ isOpen: false, index: 0, mediaList: [] });
 
   const handleNext = () => {
     setViewerState((prev) => ({
       ...prev,
-      index: (prev.index + 1) % allMedia.length,
+      index: (prev.index + 1) % prev.mediaList.length,
     }));
   };
 
   const handlePrev = () => {
     setViewerState((prev) => ({
       ...prev,
-      index: (prev.index - 1 + allMedia.length) % allMedia.length,
+      index: (prev.index - 1 + prev.mediaList.length) % prev.mediaList.length,
     }));
   };
+
+  const allMediaForCuration = [...folders.flatMap(f => f.media), ...uncategorized];
+
+  if (selectedFolder) {
+    return (
+      <FolderView 
+        folder={selectedFolder}
+        onBack={() => setSelectedFolder(null)}
+        openViewer={openViewer}
+      />
+    )
+  }
 
   return (
     <div className="container mx-auto px-4 py-8 md:px-6">
@@ -66,7 +83,7 @@ export function GalleryClient({ allMedia }: { allMedia: Media[] }) {
                 Upload Media
             </Button>
             <AiCurationPanel
-                media={allMedia}
+                media={allMediaForCuration}
                 setAiSuggestions={setAiSuggestions}
                 setHighlightedGroup={setHighlightedGroup}
                 suggestions={aiSuggestions}
@@ -74,27 +91,34 @@ export function GalleryClient({ allMedia }: { allMedia: Media[] }) {
         </div>
       </div>
 
-      {aiSuggestions?.reasoning && highlightedGroup && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-6 rounded-lg border border-accent/20 bg-accent/10 p-4 text-center text-accent-foreground shadow-inner"
-        >
-          <p className="font-semibold italic">
-            AI Suggestion: &quot;{aiSuggestions.reasoning}&quot;
-          </p>
-        </motion.div>
-      )}
-
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         <AnimatePresence>
-          {allMedia.map((media, index) => (
+          {folders.map((folder) => (
+            <motion.div
+              key={folder.id}
+              layout
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              className="group relative aspect-[3/4] cursor-pointer overflow-hidden rounded-lg bg-card shadow-lg transition-all duration-300 hover:shadow-primary/30"
+              onClick={() => setSelectedFolder(folder)}
+            >
+              <div className="flex h-full flex-col items-center justify-center p-4">
+                <FolderIcon className="h-24 w-24 text-primary/70 transition-transform duration-300 group-hover:scale-110 group-hover:text-primary" />
+                <p className="mt-4 text-center font-headline text-lg font-bold text-foreground">
+                  {folder.name}
+                </p>
+                <p className="text-sm text-muted-foreground">{folder.media.length} items</p>
+              </div>
+            </motion.div>
+          ))}
+          {uncategorized.map((media, index) => (
             <MediaItem
               key={media.id}
               media={media}
               index={index}
-              openViewer={openViewer}
-              isHighlighted={highlightedGroup?.includes(index) ?? false}
+              openViewer={(idx) => openViewer(idx, uncategorized)}
+              isHighlighted={highlightedGroup?.includes(folders.length + index) ?? false}
             />
           ))}
         </AnimatePresence>
@@ -103,7 +127,7 @@ export function GalleryClient({ allMedia }: { allMedia: Media[] }) {
       <AnimatePresence>
         {viewerState.isOpen && (
           <MediaViewer
-            media={allMedia[viewerState.index]}
+            media={viewerState.mediaList[viewerState.index]}
             onClose={closeViewer}
             onNext={handleNext}
             onPrev={handlePrev}
