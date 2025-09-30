@@ -1,10 +1,12 @@
 import data from './placeholder-images.json';
 
-export type ImagePlaceholder = {
+export type Media = {
   id: string;
+  type: 'image' | 'video';
   description: string;
   imageUrl: string;
+  videoUrl?: string;
   imageHint: string;
 };
 
-export const PlaceHolderImages: ImagePlaceholder[] = data.placeholderImages;
+export const mediaData: Media[] = data.placeholderImages;

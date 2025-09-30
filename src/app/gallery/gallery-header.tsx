@@ -1,0 +1,28 @@
+import { Logo } from "@/components/icons/logo";
+import { Button } from "@/components/ui/button";
+import { logout } from "@/lib/actions";
+import { LogOut } from "lucide-react";
+import Link from "next/link";
+
+export function GalleryHeader() {
+  return (
+    <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur-sm">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+        <Link href="/gallery" className="flex items-center gap-2">
+          <Logo className="h-8 w-8 text-primary" />
+          <span className="font-headline text-2xl font-bold text-foreground">
+            Forever Gallery
+          </span>
+        </Link>
+        <div className="flex items-center gap-4">
+          <form action={logout}>
+            <Button variant="ghost" size="sm" type="submit">
+              <LogOut className="mr-2 h-4 w-4" />
+              Logout
+            </Button>
+          </form>
+        </div>
+      </div>
+    </header>
+  );
+}
