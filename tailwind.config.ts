@@ -14,6 +14,7 @@ export default {
         headline: ['Playfair Display', 'serif'],
         handwriting: ['Corinthia', 'cursive'],
         code: ['monospace'],
+        'comic-relief': ['Comic Relief', 'cursive'],
       },
       colors: {
         background: 'hsl(var(--background))',
