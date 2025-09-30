@@ -32,7 +32,7 @@ export function GalleryClient({ folders, uncategorized }: { folders: Folder[], u
   
   const handleUploadClick = () => {
     toast({
-      title: "Feature coming soon!",
+      title: "Feature's coming soon!",
       description: "Media upload functionality is currently in development.",
     });
   };
@@ -74,7 +74,7 @@ export function GalleryClient({ folders, uncategorized }: { folders: Folder[], u
             Our Moments
           </h1>
           <p className="mt-2 text-lg text-foreground/80">
-            A collection of memories we'll never forget.
+            A collection of memories we'll never forget...
           </p>
         </div>
         <div className="flex gap-2">

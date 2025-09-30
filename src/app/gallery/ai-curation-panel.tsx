@@ -71,7 +71,7 @@ export function AiCurationPanel({
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle className="font-headline text-2xl text-primary">
+          <SheetTitle className="font-comic-relief text-2xl text-primary">
             AI Storyteller
           </SheetTitle>
           <SheetDescription>
