@@ -4,8 +4,8 @@ import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Forever Gallery',
-  description: 'A love-themed gallery for cherished memories.',
+  title: 'LoveVault - our personal media gallery',
+  description: 'A love-themed gallery for cherished memories of Bismi and Zayan.',
 };
 
 export default function RootLayout({

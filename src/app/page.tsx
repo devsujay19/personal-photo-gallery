@@ -25,10 +25,10 @@ export default function LoginPage() {
         <CardHeader className="items-center text-center">
           <Logo className="mb-4 h-16 w-16 text-primary" />
           <CardTitle className="font-headline text-4xl">
-            Forever Gallery
+            LoveVault
           </CardTitle>
           <CardDescription className="font-body text-foreground/80">
-            Our cherished moments, sealed with a secret.
+            Us together, cherishing our beautiful moments!
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -37,7 +37,7 @@ export default function LoginPage() {
       </Card>
       
       <footer className="absolute bottom-4 z-10 text-center text-sm text-primary-foreground/70">
-        <p>&copy; {new Date().getFullYear()} b!sm! & z@y@n. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Bismi & Zayan. All rights reserved.</p>
       </footer>
     </main>
   );

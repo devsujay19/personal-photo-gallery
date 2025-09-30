@@ -34,14 +34,14 @@ export function LoginForm() {
     if (state?.error) {
       toast({
         variant: "destructive",
-        title: "Login Failed",
+        title: "There's a problem. Try again.",
         description: state.error,
       });
     }
     if (state?.success) {
       toast({
-        title: "Success!",
-        description: "Welcome to our gallery.",
+        title: "Welcome!",
+        description: "Welcome to our gallery!",
       });
       router.push("/gallery");
     }
@@ -54,7 +54,7 @@ export function LoginForm() {
           id="password"
           name="password"
           type="password"
-          placeholder="Enter the secret word..."
+          placeholder="Enter the passcode..."
           required
           className="bg-background/50 text-center"
         />
