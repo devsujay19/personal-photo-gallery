@@ -3,7 +3,7 @@
 import type { Media } from "@/lib/placeholder-images";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type MediaViewerProps = {
@@ -14,6 +14,54 @@ type MediaViewerProps = {
 };
 
 export function MediaViewer({ media, onClose, onNext, onPrev }: MediaViewerProps) {
+  const renderContent = () => {
+    switch (media.type) {
+      case "image":
+        return (
+          <Image
+            src={media.imageUrl}
+            alt={media.description}
+            fill
+            className="rounded-lg object-contain"
+          />
+        );
+      case "video":
+        return (
+          <video
+            src={media.videoUrl}
+            controls
+            autoPlay
+            loop
+            className="h-full w-full rounded-lg object-contain"
+          />
+        );
+      case "audio":
+        return (
+          <div className="flex h-full w-full flex-col items-center justify-center">
+            <div className="relative aspect-square w-full max-w-md">
+               <Image
+                  src={media.imageUrl}
+                  alt={media.description}
+                  fill
+                  className="rounded-lg object-cover"
+                />
+                <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-black/30">
+                    <Music className="h-24 w-24 text-white/70" />
+                </div>
+            </div>
+            <audio
+              src={media.audioUrl}
+              controls
+              autoPlay
+              className="mt-4 w-full max-w-md"
+            />
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+  
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -60,22 +108,7 @@ export function MediaViewer({ media, onClose, onNext, onPrev }: MediaViewerProps
         className="relative h-[90vh] w-[90vw] max-w-screen-xl"
         onClick={(e) => e.stopPropagation()}
       >
-        {media.type === "image" ? (
-          <Image
-            src={media.imageUrl}
-            alt={media.description}
-            fill
-            className="rounded-lg object-contain"
-          />
-        ) : (
-          <video
-            src={media.videoUrl}
-            controls
-            autoPlay
-            loop
-            className="h-full w-full rounded-lg object-contain"
-          />
-        )}
+        {renderContent()}
       </motion.div>
       <div className="absolute bottom-4 max-w-xl p-4 text-center text-white/90">
         <p>{media.description}</p>
