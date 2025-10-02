@@ -78,6 +78,14 @@
       "description": "An engagement ring sparkling on a hand, held by another.",
       "imageUrl": "https://images.unsplash.com/photo-1529519195486-16945f0fb37f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlbmdhZ2VtZW50JTIwcmluZ3xlbnwwfHx8fDE3NTkxMzYzMDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "engagement ring"
+    },
+    {
+      "id": "audio-1",
+      "type": "audio",
+      "description": "A sweet voice note memory.",
+      "imageUrl": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzb3VuZHdhdmV8ZW58MHx8fHwxNzU5MjM5MDAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "audioUrl": "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "imageHint": "voice note"
     }
   ]
 }

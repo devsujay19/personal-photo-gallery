@@ -3,7 +3,7 @@
 
 import type { Media } from "@/lib/placeholder-images";
 import Image from "next/image";
-import { PlayCircle, Film } from "lucide-react";
+import { PlayCircle, Film, Music } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
@@ -16,6 +16,7 @@ type MediaItemProps = {
 
 export function MediaItem({ media, index, openViewer, isHighlighted }: MediaItemProps) {
   const isVideo = media.type === "video";
+  const isAudio = media.type === "audio";
 
   return (
     <motion.div
@@ -48,11 +49,23 @@ export function MediaItem({ media, index, openViewer, isHighlighted }: MediaItem
         </div>
       )}
 
+      {isAudio && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Music className="h-16 w-16 text-white/70 transition-all duration-300 group-hover:scale-110 group-hover:text-white" />
+        </div>
+      )}
+
       <div className="absolute bottom-0 left-0 p-4">
         {isVideo && (
           <div className="mb-1 flex items-center gap-1.5 rounded-full bg-black/50 px-2 py-1 text-xs text-white backdrop-blur-sm">
             <Film className="h-3 w-3" />
             <span>Video</span>
+          </div>
+        )}
+        {isAudio && (
+          <div className="mb-1 flex items-center gap-1.5 rounded-full bg-black/50 px-2 py-1 text-xs text-white backdrop-blur-sm">
+            <Music className="h-3 w-3" />
+            <span>Audio</span>
           </div>
         )}
         <p className="line-clamp-2 text-sm font-medium text-white">

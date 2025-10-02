@@ -36,6 +36,25 @@ export function MediaViewer({ media, onClose, onNext, onPrev }: MediaViewerProps
             className="h-full w-full rounded-lg object-contain"
           />
         );
+      case "audio":
+        return (
+          <div className="relative h-full w-full">
+            <Image
+              src={media.imageUrl}
+              alt={media.description}
+              fill
+              className="rounded-lg object-cover blur-sm brightness-50"
+            />
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
+              <audio
+                src={media.audioUrl}
+                controls
+                autoPlay
+                className="w-full max-w-md rounded-lg"
+              />
+            </div>
+          </div>
+        );
       default:
         return null;
     }
@@ -84,13 +103,13 @@ export function MediaViewer({ media, onClose, onNext, onPrev }: MediaViewerProps
       {/* Media Content */}
       <motion.div
         layoutId={`media-${media.id}`}
-        className="relative h-[90vh] w-[90vw] max-w-screen-xl"
+        className="relative h-[90vh] w-[90vw] max-w-screen-xl flex items-center justify-center"
         onClick={(e) => e.stopPropagation()}
       >
         {renderContent()}
       </motion.div>
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 text-center text-white/90">
-        <p className="inline bg-black/60 p-2 leading-relaxed backdrop-blur-sm rounded-md">
+        <p className="inline rounded-md bg-black/60 p-2 leading-relaxed backdrop-blur-sm">
           {media.description}
         </p>
       </div>
