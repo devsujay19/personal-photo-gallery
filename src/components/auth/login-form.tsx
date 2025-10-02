@@ -13,7 +13,7 @@ function SubmitButton() {
   return (
     <Button type="submit" className="w-full font-bold" disabled={pending}>
       {pending ? (
-        "Unlocking..."
+        "Signing you in..."
       ) : (
         <>
           Enter <Heart className="ml-2 h-4 w-4" />

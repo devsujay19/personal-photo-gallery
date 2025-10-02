@@ -34,7 +34,7 @@ export async function login(
     // Redirect on the server after successful login
     redirect("/gallery");
   } else {
-    return { error: "The secret is incorrect. Try again." };
+    return { error: "You've entered wrong passcode. Try again." };
   }
 }
 
