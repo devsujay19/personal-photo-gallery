@@ -4,7 +4,7 @@
 import type { Media } from "@/lib/placeholder-images";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, X, Music } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type MediaViewerProps = {
@@ -35,28 +35,6 @@ export function MediaViewer({ media, onClose, onNext, onPrev }: MediaViewerProps
             loop
             className="h-full w-full rounded-lg object-contain"
           />
-        );
-      case "audio":
-        return (
-          <div className="flex h-full w-full flex-col items-center justify-center">
-            <div className="relative aspect-square w-full max-w-md">
-               <Image
-                  src={media.imageUrl}
-                  alt={media.description}
-                  fill
-                  className="rounded-lg object-cover"
-                />
-                <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-black/30">
-                    <Music className="h-24 w-24 text-white/70" />
-                </div>
-            </div>
-            <audio
-              src={media.audioUrl}
-              controls
-              autoPlay
-              className="mt-4 w-full max-w-md"
-            />
-          </div>
         );
       default:
         return null;
@@ -111,8 +89,10 @@ export function MediaViewer({ media, onClose, onNext, onPrev }: MediaViewerProps
       >
         {renderContent()}
       </motion.div>
-      <div className="absolute bottom-4 max-w-xl p-4 text-center text-white/90">
-        <p>{media.description}</p>
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 text-center text-white/90">
+        <p className="inline bg-black/60 p-2 leading-relaxed backdrop-blur-sm rounded-md">
+          {media.description}
+        </p>
       </div>
     </motion.div>
   );

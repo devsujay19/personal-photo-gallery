@@ -78,14 +78,6 @@
       "description": "An engagement ring sparkling on a hand, held by another.",
       "imageUrl": "https://images.unsplash.com/photo-1529519195486-16945f0fb37f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlbmdhZ2VtZW50JTIwcmluZ3xlbnwwfHx8fDE3NTkxMzYzMDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "engagement ring"
-    },
-    {
-      "id": "11",
-      "type": "audio",
-      "description": "Our favorite song, a reminder of our first dance.",
-      "imageUrl": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtdXNpY3xlbnwwfHx8fDE3MzA1MTc5ODF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-      "imageHint": "music song"
     }
   ]
 }
