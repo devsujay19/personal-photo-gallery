@@ -1,3 +1,4 @@
+
 "use client";
 
 import type { Media } from "@/lib/placeholder-images";
