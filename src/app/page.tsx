@@ -17,8 +17,8 @@ function LogoutToast() {
   useEffect(() => {
     if (searchParams.get('logged_out')) {
       toast({
-        title: 'Logged out',
-        description: 'You have been successfully logged out.',
+        title: 'Signed out',
+        description: 'You have been successfully signed out.',
       });
     }
   }, [searchParams, toast]);

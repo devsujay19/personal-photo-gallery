@@ -108,8 +108,8 @@ export function MediaViewer({ media, onClose, onNext, onPrev }: MediaViewerProps
       >
         {renderContent()}
       </motion.div>
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 text-center text-white/90">
-        <p className="inline rounded-md bg-black/60 p-2 leading-relaxed backdrop-blur-sm">
+      <div className="absolute bottom-4 left-4 right-4 text-center">
+        <p className="inline-block rounded-md bg-black/50 px-4 py-2 text-white/90">
           {media.description}
         </p>
       </div>

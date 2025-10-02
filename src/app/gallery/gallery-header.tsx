@@ -17,7 +17,7 @@ export function GalleryHeader() {
           <Button variant="ghost" size="sm" asChild>
             <Link href="/logout">
               <LogOut className="mr-2 h-4 w-4" />
-              Logout
+              Sign out
             </Link>
           </Button>
         </div>
