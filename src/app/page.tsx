@@ -7,7 +7,7 @@ import { Logo } from '@/components/icons/logo';
 import { LoginForm } from '@/components/auth/login-form';
 import { mediaData } from '@/lib/placeholder-images';
 import { useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
 function LogoutToast() {
@@ -26,13 +26,15 @@ function LogoutToast() {
   return null;
 }
 
-export default function LoginPage() {
+function LoginPageContent() {
   const allMedia = [...mediaData.folders.flatMap(f => f.media), ...mediaData.uncategorized];
   const heroImage = allMedia.find(img => img.imageHint.includes('couple'));
   
   return (
     <main className="relative flex min-h-screen w-full flex-col items-center justify-center p-4">
-       <LogoutToast />
+      <Suspense fallback={null}>
+        <LogoutToast />
+      </Suspense>
       <div className="absolute inset-0 z-0">
         <Image
           src={heroImage?.imageUrl || "https://picsum.photos/seed/lovebg/1920/1080"}
@@ -65,4 +67,13 @@ export default function LoginPage() {
       </footer>
     </main>
   );
+}
+
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LoginPageContent />
+    </Suspense>
+  )
 }
